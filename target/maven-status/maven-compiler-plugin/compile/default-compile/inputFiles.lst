@@ -1,0 +1,13 @@
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\config\CorsConfig.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\config\SecurityConfig.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\controller\IssueController.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\dto\IssueKafkaEventDto.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\dto\WorkshopKafkaEventDto.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\IssueApplication.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\model\Issue.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\model\Workshop.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\repository\IssueRepository.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\repository\WorkshopRepository.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\service\IssueService.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\service\KafkaConsumerService.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\issue\service\kafkaProducerService.java
