@@ -1,0 +1,8 @@
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\config\SecurityConfig.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\controller\WorkshopController.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\dto\WorkshopKafkaEventDto.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\model\Workshop.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\repository\WorkshopRepository.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\service\KafkaProducerService.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\service\WorkshopService.java
+D:\Intellij\ms_team3\src\main\java\pe\edu\vallegrande\workshop\WorkshopApplication.java
