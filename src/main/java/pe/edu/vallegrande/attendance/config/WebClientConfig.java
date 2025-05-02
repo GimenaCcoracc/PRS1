@@ -10,7 +10,7 @@ public class WebClientConfig {
     @Bean
     public WebClient personWebClient() {
         return WebClient.builder()
-                .baseUrl("https://vg-ms-person.onrender.com/api/v1/person")
+                .baseUrl("https://vg-ms-person.onrender.com/api/v1/person/active")
                 .build();
     }
 }

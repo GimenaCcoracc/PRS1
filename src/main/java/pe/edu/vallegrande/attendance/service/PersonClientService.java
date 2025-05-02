@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import lombok.RequiredArgsConstructor;
-import pe.edu.vallegrande.attendance.model.PersonDTO;
+import pe.edu.vallegrande.attendance.dto.PersonDTO;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
