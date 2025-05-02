@@ -12,9 +12,11 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class AttendanceService {
     private final AttendanceRepository attendanceRepository;
-    
-    public AttendanceService(AttendanceRepository attendanceRepository) {
+    private final PersonClientService personClientService;
+
+    public AttendanceService(AttendanceRepository attendanceRepository, PersonClientService personClientService) {
         this.attendanceRepository = attendanceRepository;
+        this.personClientService = personClientService;
     }
 
     public Flux<Attendance> getAllAttendance() {
@@ -35,8 +37,14 @@ public class AttendanceService {
     }
 
     public Mono<Attendance> saveAttendance(Attendance attendance) {
-        return attendanceRepository.save(attendance);
+        return personClientService.getPersonById(attendance.getPersonId())
+            .flatMap(personDTO -> {
+                log.info("Registrando asistencia para: {} {}", personDTO.getName(), personDTO.getSurname());
+                return attendanceRepository.save(attendance);
+            })
+            .switchIfEmpty(Mono.error(new RuntimeException("Persona no encontrada o inactiva")));
     }
+    
 
     public Mono<Attendance> updateAttendance(Long id, Attendance updatedAttendance) {
         return attendanceRepository.findById(id)
