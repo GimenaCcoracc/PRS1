@@ -1,5 +1,7 @@
 package pe.edu.vallegrande.workshop.model;
 import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -21,4 +23,5 @@ public class Workshop {
     @Column("endDate")
     private LocalDate endDate;
     private String state;
+    private String personId;
 }

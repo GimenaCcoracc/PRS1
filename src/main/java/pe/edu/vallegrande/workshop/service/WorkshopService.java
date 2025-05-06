@@ -90,6 +90,7 @@ public class WorkshopService {
         dto.setStartDate(workshop.getStartDate());
         dto.setEndDate(workshop.getEndDate());
         dto.setState(workshop.getState());
+        dto.setPersonId(workshop.getPersonId());
         return dto;
     }
 

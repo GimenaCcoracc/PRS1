@@ -50,6 +50,7 @@ public class WorkshopController {
                     existingWorkshop.setDescription(updatedWorkshop.getDescription());
                     existingWorkshop.setStartDate(updatedWorkshop.getStartDate());
                     existingWorkshop.setEndDate(updatedWorkshop.getEndDate());
+                    existingWorkshop.setPersonId(updatedWorkshop.getPersonId());
                     if (updatedWorkshop.getState() != null) {
                         existingWorkshop.setState(updatedWorkshop.getState());
                     }

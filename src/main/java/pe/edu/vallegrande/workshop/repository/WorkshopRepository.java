@@ -20,5 +20,7 @@ public interface WorkshopRepository extends ReactiveCrudRepository<Workshop, Lon
     @Query("update workshop set state = 'A' where id = id")
     Mono<Void> activateWorkshop(Long id);
 
+    Flux<Workshop> findByPersonId(Long personId);
+
     Mono<Workshop> findTopByOrderByIdDesc();
 }

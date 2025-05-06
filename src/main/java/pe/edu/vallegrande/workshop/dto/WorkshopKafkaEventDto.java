@@ -11,4 +11,5 @@ public class WorkshopKafkaEventDto {
     private LocalDate startDate;
     private LocalDate endDate;
     private String state;
+    private String personId;
 }
