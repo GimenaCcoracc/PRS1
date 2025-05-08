@@ -1,5 +1,6 @@
 name: Deploy Angular Frontend
 
+# El trigger para este workflow es cuando hay un push a la rama 'frontend'
 on:
   push:
     branches:
@@ -7,26 +8,40 @@ on:
 
 jobs:
   build:
+    # Definir el entorno de ejecución del job. Aquí usamos Ubuntu.
     runs-on: ubuntu-latest
 
     steps:
+      # Paso 1: Descargar el código fuente desde el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Paso 2: Configurar Node.js para el entorno de construcción
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 18  # Usamos Node.js versión 18
 
+      # Paso 3: Instalar las dependencias de Node (npm install)
       - name: Install dependencies
         run: npm install
 
+      # Paso 4: Compilar el proyecto con configuración de producción
       - name: Build Angular app
         run: npm run build -- --configuration=production
 
+      # Paso 5: Desplegar en GitHub Pages (Usando un token de GitHub)
       - name: Deploy to GitHub Pages
-        if: success()
+        if: success()  # Solo se ejecuta si los pasos anteriores tuvieron éxito
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/nphdashboard
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # El token de GitHub se utiliza para hacer el push
+          publish_dir: ./dist/nphdashboard  # La carpeta donde se genera el build
+
+      # **Alternativa con token personal si el bot no tiene permisos suficientes**
+      # Si el bot no tiene permisos de escritura, puedes usar un token personal de GitHub.
+      # - name: Deploy to GitHub Pages with Personal Access Token (PAT)
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GH_PAGES_TOKEN }}  # Usamos el token personalizado
+      #     publish_dir: ./dist/nphdashboard
