@@ -1,0 +1,9 @@
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/WorkshopApplication.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/config/SecurityConfig.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/controller/WorkshopController.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/dto/WorkshopKafkaEventDto.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/model/Workshop.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/repository/WorkshopRepository.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/service/KafkaProducerService.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/service/WorkshopService.java
+/workspaces/PRS1/src/main/java/pe/edu/vallegrande/workshop/service/WorkshopServiceTest.java
