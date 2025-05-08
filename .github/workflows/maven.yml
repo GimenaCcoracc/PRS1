@@ -32,5 +32,15 @@ jobs:
       - name: Build with Maven
         run: mvn clean install --no-transfer-progress
 
+      - name: Set environment variables
+        run: |
+          echo "DB_URL=${{ secrets.DB_URL }}" >> $GITHUB_ENV
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> $GITHUB_ENV
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+          echo "KAFKA_BOOTSTRAP_SERVERS=${{ secrets.KAFKA_BOOTSTRAP_SERVERS }}" >> $GITHUB_ENV
+          echo "KAFKA_USERNAME=${{ secrets.KAFKA_USERNAME }}" >> $GITHUB_ENV
+          echo "KAFKA_PASSWORD=${{ secrets.KAFKA_PASSWORD }}" >> $GITHUB_ENV
+          echo "PORT=${{ secrets.PORT }}" >> $GITHUB_ENV
+
       - name: Run tests
         run: mvn test
