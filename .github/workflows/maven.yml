@@ -1,5 +1,5 @@
 name: Java 17 CI with Maven
-
+# Define que el trabajo se ejecutará en un entorno de Ubuntu.
 on:
   push:
     branches: [ "workshop2" ]
