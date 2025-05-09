@@ -10,6 +10,7 @@ public class WorkshopKafkaEventDto {
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
+    private String observation;
     private String state;
     private String personId;
 }

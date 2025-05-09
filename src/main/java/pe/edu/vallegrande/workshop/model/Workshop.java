@@ -22,6 +22,7 @@ public class Workshop {
     private LocalDate startDate;
     @Column("endDate")
     private LocalDate endDate;
+    private String observation;
     private String state;
     private String personId;
 }

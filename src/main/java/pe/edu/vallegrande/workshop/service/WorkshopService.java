@@ -89,6 +89,7 @@ public class WorkshopService {
         dto.setDescription(workshop.getDescription());
         dto.setStartDate(workshop.getStartDate());
         dto.setEndDate(workshop.getEndDate());
+        dto.setObservation(workshop.getObservation());
         dto.setState(workshop.getState());
         dto.setPersonId(workshop.getPersonId());
         return dto;
