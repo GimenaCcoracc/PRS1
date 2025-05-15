@@ -1,15 +1,15 @@
 spring:
   r2dbc:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: r2dbc:postgresql://ep-odd-sun-a56iuqcm-pooler.us-east-2.aws.neon.tech/db_prs1?sslmode=require
+    username: db_prs1_owner
+    password: npg_1sQejrO2hupA
 
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    bootstrap-servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
     properties:
       security.protocol: SASL_SSL
       sasl.mechanism: PLAIN
-      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${KAFKA_USERNAME}" password="${KAFKA_PASSWORD}";
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="53QBHPHGWMCFCWXG" password="tXwcS2Hk15Q2wFmIHg6CXeZF3i9KpC2H75ioGr/v7SZLbnvTbiUcy68I1T8p2n3A";
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -17,7 +17,7 @@ spring:
       group-id: springboot-group-1
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      
+
   security:
     oauth2:
       resourceserver:
@@ -25,4 +25,4 @@ spring:
           issuer-uri: https://securetoken.google.com/security-prs1
 
 server:
-  port: ${PORT:8081}
+  port: 8081
