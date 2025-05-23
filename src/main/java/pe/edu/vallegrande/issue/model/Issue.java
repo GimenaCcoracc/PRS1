@@ -13,8 +13,9 @@ public class Issue {
     @Id
     private Long id;
     private String name;
-    private Integer  workshopId;
+    private Integer workshopId;
     private String sesion;
     private LocalDateTime scheduledTime;
+    private String observation;
     private String state;
 }

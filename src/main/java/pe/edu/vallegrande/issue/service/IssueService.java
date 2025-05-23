@@ -66,6 +66,7 @@ public class IssueService {
         dto.setWorkshopId(issue.getWorkshopId());
         dto.setSesion(issue.getSesion());
         dto.setScheduledTime(issue.getScheduledTime());
+        dto.setObservation(issue.getObservation());
         dto.setState(issue.getState());
         return dto;
     }
