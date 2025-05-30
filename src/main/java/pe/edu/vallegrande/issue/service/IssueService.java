@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
 import pe.edu.vallegrande.issue.dto.IssueKafkaEventDto;
+import pe.edu.vallegrande.issue.kafka.kafkaProducerService;
 import pe.edu.vallegrande.issue.model.Issue;
 import pe.edu.vallegrande.issue.repository.IssueRepository;
 import reactor.core.publisher.Flux;

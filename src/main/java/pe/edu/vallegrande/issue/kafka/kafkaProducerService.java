@@ -1,10 +1,8 @@
-package pe.edu.vallegrande.issue.service;
+package pe.edu.vallegrande.issue.kafka;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pe.edu.vallegrande.issue.dto.IssueKafkaEventDto;
@@ -12,6 +10,7 @@ import pe.edu.vallegrande.issue.dto.IssueKafkaEventDto;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+
 public class kafkaProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper objectMapper;

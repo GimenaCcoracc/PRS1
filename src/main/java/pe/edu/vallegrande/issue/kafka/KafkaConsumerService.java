@@ -1,4 +1,4 @@
-package pe.edu.vallegrande.issue.service;
+package pe.edu.vallegrande.issue.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
@@ -13,6 +13,7 @@ import pe.edu.vallegrande.issue.dto.WorkshopKafkaEventDto;
 import pe.edu.vallegrande.issue.model.Workshop;
 import pe.edu.vallegrande.issue.repository.WorkshopRepository;
 import reactor.core.publisher.Mono;
+
 
 @Slf4j
 @Service
@@ -61,5 +62,4 @@ public class KafkaConsumerService {
             log.error("❌ Error procesando evento Kafka: {}", e.getMessage(), e);
         }
     }
-
 }
