@@ -1,16 +1,19 @@
-package pe.edu.vallegrande.attendance.service;
+package pe.edu.vallegrande.attendance.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pe.edu.vallegrande.attendance.dto.IssueKafkaEventDto;
 import pe.edu.vallegrande.attendance.model.Issue;
 import pe.edu.vallegrande.attendance.repository.IssueRepository;
 import reactor.core.publisher.Mono;
+
 
 @Slf4j
 @Service

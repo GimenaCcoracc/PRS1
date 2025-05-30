@@ -1,11 +1,14 @@
-package pe.edu.vallegrande.attendance.service;
+package pe.edu.vallegrande.attendance.kafka;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pe.edu.vallegrande.attendance.dto.AttendanceKafkaEventDto;
+
 
 @Service
 @RequiredArgsConstructor
