@@ -59,6 +59,7 @@ public class IssueController {
                     existingIssue.setName(updatedIssue.getName());
                     existingIssue.setWorkshopId(updatedIssue.getWorkshopId());
                     existingIssue.setScheduledTime(updatedIssue.getScheduledTime());
+                    existingIssue.setObservation(updatedIssue.getObservation());
                     if (updatedIssue.getState() != null) {
                         existingIssue.setState(updatedIssue.getState());
                     }
