@@ -1,4 +1,6 @@
 package pe.edu.vallegrande.attendance.controller;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,6 @@ import pe.edu.vallegrande.attendance.service.AttendanceService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-
 @RestController
 @RequestMapping("/asistencia")
 @Slf4j
@@ -25,7 +26,7 @@ public class AttendanceController {
     public AttendanceController(AttendanceService attendanceService) {
         this.attendanceService = attendanceService;
     }
-    
+
     @GetMapping("/list")
     public Flux<Attendance> getAllAttendance() {
         return attendanceService.getAllAttendance();
@@ -78,12 +79,24 @@ public class AttendanceController {
                 .switchIfEmpty(Mono.error(new IllegalArgumentException("Asistencia no encontrada con ID: " + id)));
     }
 
+    @PutMapping("/activate/{id}")
+    public Mono<ResponseEntity<Void>> activateAttendance(@PathVariable Long id) {
+        log.info("Restaurando asistencia con ID {}", id);
+        return attendanceService.getAttendanceById(id)
+                .flatMap(existingAttendance -> {
+                    existingAttendance.setState("A");
+                    return attendanceService.saveAttendance(existingAttendance)
+                            .then(Mono.just(ResponseEntity.ok().<Void>build()));
+                })
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
     // Eliminado lógico
-    @DeleteMapping("/activate/{id}")
+    @DeleteMapping("/deactivate/{id}")
     public Mono<Attendance> logicalDeleteAttendance(@PathVariable Long id) {
         log.info("Eliminando lógico asistencia con ID {}", id);
         return attendanceService.logicalDelete(id)
-            .switchIfEmpty(Mono.error(new IllegalArgumentException("Asistencia no encontrada con ID: " + id)));
+                .switchIfEmpty(Mono.error(new IllegalArgumentException("Asistencia no encontrada con ID: " + id)));
     }
 
     // Eliminado físico

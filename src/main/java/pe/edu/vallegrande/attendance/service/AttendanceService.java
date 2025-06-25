@@ -62,4 +62,8 @@ public class AttendanceService {
         });
     }
 
+    public Mono<Attendance> findById(Long id) {
+        return attendanceRepository.findById(id);
+    }
+
 }
